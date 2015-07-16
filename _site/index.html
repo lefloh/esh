@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>esh | elastic query shell</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>esh | elastic query shell</h1>
+        </header>
+
+        <pre id="error" class="alert alert-danger alert-dismissible" role="alert" style="display: none"></pre>
+
+        <main>
+            <form class="form">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <div class="input-group ">
+                            <div class="input-group-addon">esh$</div>
+                            <label class="sr-only" for="url">URL</label>
+                            <input type="url" id="url" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <select id="method" class="form-control">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-default btn-block">Search</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <select id="exampleRequests" class="form-control">
+                            <option value="-1" disabled selected>Example Requests</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+
+            <pre id="requestData"></pre>
+
+            <pre id="response"></pre>
+
+        </main>
+
+        <footer>
+            <h3>Shortcuts</h3>
+            <p>Scroll through your history with <kbd>ctrl + &uarr;</kbd> and <kbd>ctrl + &darr;</kbd></p>
+            <p>Execute a query with <kbd>ctrl + &crarr;</kbd></p>
+            <p>Clear everything with <kbd>ctrl + u</kbd></p>
+            <p>Mac Users: use <kbd>cmd</kbd> instead of <kbd>ctrl</kbd></p>
+        </footer>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ace/ace.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

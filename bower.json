@@ -1,0 +1,21 @@
+{
+  "name": "esh",
+  "version": "1.0.0",
+  "authors": [
+    "Florian Hirsch"
+  ],
+  "description": "elastic query shell",
+  "license": "The Apache License (v2)",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ace-builds": "~1.1.9",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
