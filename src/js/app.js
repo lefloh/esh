@@ -20,13 +20,16 @@
         };
 
         var exampleRequests = [
+            new Request("GET", createUrl("_cat/allocation?v"), undefined, "cat allocation"),
             new Request("GET", createUrl("_cat/indices?v"), undefined, "cat indices"),
+            new Request("GET", createUrl("_cat/master?v"), undefined, "cat master"),
+            new Request("GET", createUrl("_search?q=gender:female"), undefined, "search uri"),
             new Request("POST", createUrl("_search"),
                 {
                     "query" : {
                         "match_all" : {}
                     }
-                }, "query match_all")
+                }, "search match_all")
         ];
 
         var history = [];
