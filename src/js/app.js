@@ -68,7 +68,7 @@
                 $('#url').val(),
                 data
             );
-            var isJSON = typeof request.data !== 'undefined';
+            var isJSON = request.url.indexOf('_cat') === -1;
             $.ajax({
                 type: request.method,
                 url: realUrl(request.url),

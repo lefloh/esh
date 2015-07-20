@@ -1,4 +1,4 @@
-(function(ESH, $) {
+(function(ESH) {
 
     'use strict';
 
@@ -272,4 +272,4 @@
         "with_positions_offsets"
     ];
 
-})(window.ESH = window.ESH || {}, jQuery);
+})(window.ESH = window.ESH || {});
