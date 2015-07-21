@@ -4,7 +4,7 @@
 
     ESH.requestEditor = function(commands) {
 
-        var editor = ace.edit('requestData');
+        var editor = ace.edit('request');
         editor.setTheme('ace/theme/chrome');
         editor.getSession().setMode('ace/mode/json');
         editor.setOptions({
