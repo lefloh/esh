@@ -31,7 +31,7 @@
 
         var getValue = function() {
             var value = editor.getValue();
-            return value && value.trim().length > 0 ? JSON.parse(value) : undefined;
+            return value && value.trim().length > 0 ? value : undefined;
         };
 
         var setValue = function(json) {
@@ -170,7 +170,10 @@
         "map_script",
         "map_script_file",
         "map_script_id",
+        "match",
         "match_all",
+        "match_phrase",
+        "match_phrase_prefix",
         "matched_fields",
         "max",
         "max_edits",
@@ -269,7 +272,8 @@
         "version",
         "weight",
         "window_size",
-        "with_positions_offsets"
+        "with_positions_offsets",
+        "zero_terms_query"
     ];
 
 })(window.ESH = window.ESH || {});

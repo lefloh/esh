@@ -1,26 +1,26 @@
 [
   {
     "id": "55921ed51e8512b153556745",
-    "name": "Graham Jacobson",
+    "name": "Alex Jacobson",
     "gender": "male",
     "company": "COMTRAIL",
-    "email": "grahamjacobson@comtrail.com",
+    "email": "alexjacobson@comtrail.com",
     "phone": "+1 (880) 477-2459"
   },
   {
     "id": "55921ed5b5ea1601762a8b87",
-    "name": "Earnestine Good",
+    "name": "Alex Good",
     "gender": "female",
     "company": "ISOLOGIA",
-    "email": "earnestinegood@isologia.com",
+    "email": "alexgood@isologia.com",
     "phone": "+1 (930) 570-3910"
   },
   {
     "id": "55921ed5d532f4e25a0d13d1",
-    "name": "Chrystal Beasley",
+    "name": "Alex Beasley",
     "gender": "female",
     "company": "FUELTON",
-    "email": "chrystalbeasley@fuelton.com",
+    "email": "alexbeasley@fuelton.com",
     "phone": "+1 (957) 446-3985"
   },
   {

@@ -19,19 +19,6 @@
             return document.location.origin + '/' + path;
         };
 
-        var exampleRequests = [
-            new Request("GET", createUrl("_cat/allocation?v"), undefined, "cat allocation"),
-            new Request("GET", createUrl("_cat/indices?v"), undefined, "cat indices"),
-            new Request("GET", createUrl("_cat/master?v"), undefined, "cat master"),
-            new Request("GET", createUrl("_search?q=gender:female"), undefined, "search uri"),
-            new Request("POST", createUrl("_search"),
-                {
-                    "query" : {
-                        "match_all" : {}
-                    }
-                }, "search match_all")
-        ];
-
         var history = [];
         var historyIdx = 0;
 
@@ -141,6 +128,7 @@
 
         var showError = function(msg) {
             $('#error').text(msg).fadeIn();
+            responseEditor.clear();
         };
 
         var hideError = function() {
@@ -172,6 +160,49 @@
                 keyCode: 85,
                 exec: clear
             }
+        ];
+
+        var exampleRequests = [
+            new Request('GET', createUrl('_cat/allocation?v'), undefined, '_cat allocation'),
+            new Request('GET', createUrl('_cat/indices?v'), undefined, '_cat indices'),
+            new Request('GET', createUrl('_cat/master?v'), undefined, '_cat master'),
+            new Request("POST", createUrl('_search'),
+                {
+                    "query": {
+                        "filtered": {
+                            "query": {
+                                "match": { "name": "alex" }
+                            },
+                            "filter": {
+                                "term": { "gender": "female" }
+                            }
+                        }
+                    }
+                }, '_search filtered'),
+            new Request("POST", createUrl('_search'),
+                {
+                    "query": {
+                        "match_all": {}
+                    },
+                    "sort" : [
+                        { "name" : { "order" : "asc"} }
+                    ],
+                    "from" : 2,
+                    "size" : 10
+                }, '_search from, size and sort'),
+            new Request("POST", createUrl('_search'),
+                {
+                    "query" : {
+                        "match_all" : {}
+                    }
+                }, '_search match_all'),
+            new Request("POST", createUrl('_search'),
+                {
+                    "query" : {
+                        "term" : { "gender" : "male" }
+                    }
+                }, '_search term'),
+            new Request('GET', createUrl('_search?q=gender:female'), undefined, '_search uri')
         ];
 
         return {
