@@ -108,10 +108,10 @@ module.exports = function(grunt) {
             },
             insert: {
                 options: {
-                    url: 'http://docker:9200/test/user',
+                    url: 'http://docker:9200/_bulk',
                     method: 'POST',
                     json: true,
-                    body: '<%= testdata.dataset %>'
+                    body: '<%= testdata.bulk %>'
                 }
             }
         }
@@ -131,10 +131,13 @@ module.exports = function(grunt) {
     grunt.registerTask('testdata', 'reads testdata.json and posts the content to elasticsearch', function() {
         grunt.task.run('http:clean');
         var data = grunt.file.readJSON('test/testdata.json');
+        var bulk = '';
         for (var i = 0; i < data.length; i++) {
-            grunt.config.set('testdata.dataset', data[0]);
-            grunt.task.run('http:insert');
+            bulk += JSON.stringify({ "index" : { "_index" : "test", "_type" : "person" } }) + '\n';
+            bulk += JSON.stringify(data[i]) + '\n';
         }
+        grunt.config.set('testdata.bulk', bulk);
+        grunt.task.run('http:insert');
     });
 
 };
