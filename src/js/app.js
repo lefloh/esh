@@ -45,7 +45,7 @@
             requestEditor.setValue(request.data);
         };
 
-        var http = function() {
+        var submit = function() {
             hideError();
             try {
                 var data = requestEditor.getValue();
@@ -105,12 +105,12 @@
         var registerListeners = function() {
             $('#exampleRequests').on('change', function(e) {
                 setRequest(exampleRequests[e.target.value]);
-                http();
+                submit();
                 $('#exampleRequests').val(-1);
             });
             $('form').on('submit', function(e) {
                 e.preventDefault();
-                http();
+                submit();
             });
             $('#url').on('keydown', handleKeypress);
         };
@@ -137,10 +137,10 @@
 
         var commands = [
             {
-                name : 'http',
+                name : 'submit',
                 bindKey: { win: 'Ctrl-Enter',  mac: 'Command-Enter' },
                 keyCode: 13,
-                exec: http
+                exec: submit
             },
             {
                 name : 'historyUp',

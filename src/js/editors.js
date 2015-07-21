@@ -80,6 +80,7 @@
 
     };
 
+    // hopefully all found in the query and search documentation
     var keywords = [
         "_all",
         "_first",
